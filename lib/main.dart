@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget{
   }
 }
 class Calculator extends StatefulWidget {
-  const Calculator({Key? key}) : super(key: key);
 
   @override
   _CalculatorState createState() => _CalculatorState();
@@ -21,6 +20,32 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+    appBar: AppBar(title: Text('Calculator'),backgroundColor: Colors.black,),
+      body:Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5),
+
+     child: Column(
+       mainAxisAlignment: MainAxisAlignment.end,
+       children: [
+         //Calculator Display
+         SingleChildScrollView(
+             scrollDirection: Axis.vertical,
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.end,
+             children: [
+               Padding(padding: EdgeInsets.all(10.0),
+               child:Text('0',
+               textAlign: TextAlign.left,
+                 style: TextStyle(color: Colors.white,
+                   fontSize: 100,
+                 ),
+               ),
+               )
+             ],
+           ),
+         )
+       ],
+     ), ) ,
     );
   }
 }
